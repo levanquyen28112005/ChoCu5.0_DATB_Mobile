@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Oldzy</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Tài khoản</string>
+    <string name="email_label">Email</string>
+    <string name="login_label">Đăng nhập</string>
+    <string name="register_v1_label">Đăng ký</string>
+    <string name="password_label">Mật khẩu</string>
+    <string name="register_label">Đăng ký tài khoản</string>
+    <string name="name_label">Họ và tên</string>
+    <string name="account_exists_label">Đã có tài khoản? Đăng nhập</string>
+    <string name="suggestion_register_label">Đăng ký tài khoản mới</string>
+    <string name="forgot_password_label">Quên mật khẩu?</string>
+    <string name="otp_label">Xác thực mã OTP</string>
+</resources>

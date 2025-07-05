@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:srcCompat="@drawable/ic_close"
+        app:tint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_extra_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Đăng tin"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header" />
+
+    <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--        android:id="@+id/layoutCategory"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:background="@drawable/bg_input_login"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/header">-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:layout_marginTop="5dp"-->
+    <!--            android:fontFamily="@font/montserrat_regular"-->
+    <!--            android:text="Danh mục *"-->
+    <!--            android:textColor="#3E3E3E"-->
+    <!--            android:textSize="11sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/header" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tvCategory"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="10dp"-->
+    <!--            android:fontFamily="@font/montserrat_bold"-->
+    <!--            android:paddingVertical="5dp"-->
+    <!--            android:text="Đồ điện tử - Điện thoại"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="11sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/header" />-->
+
+    <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    <!--    <androidx.appcompat.widget.AppCompatImageView-->
+    <!--        android:layout_width="20dp"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:layout_marginEnd="5dp"-->
+    <!--        android:padding="5dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/layoutCategory"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/layoutCategory"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/layoutCategory"-->
+    <!--        app:srcCompat="@drawable/ic_drop_down"-->
+    <!--        app:tint="#4D4D4D" />-->
+
+    <edu.mb.oldzy.ui.widget.CustomOptionPostView
+        android:id="@+id/opvCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:subTitle="Điện tử - Điện lạnh"
+        app:title="Danh mục *" />
+
+    <edu.mb.oldzy.ui.widget.CustomOptionPostView
+        android:id="@+id/opvCondition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opvCategory"
+        app:subTitle="Hàng mới"
+        app:title="Tình trạng *" />
+
+    <edu.mb.oldzy.ui.widget.CustomOptionPostView
+        android:id="@+id/opvBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:isInput="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/opvCondition"
+        app:subTitle="Nhập tên Thương hiệu"
+        app:title="Thương hiệu" />
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/edtEmail"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:background="@drawable/bg_input_login"-->
+    <!--        android:hint="@string/email_label"-->
+    <!--        android:importantForAutofill="no"-->
+    <!--        android:inputType="textEmailAddress"-->
+    <!--        android:paddingHorizontal="10dp"-->
+    <!--        android:text="admin@oldzy.com"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvTitle" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/edtPassword"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:background="@drawable/bg_input_login"-->
+    <!--        android:hint="@string/password_label"-->
+    <!--        android:importantForAutofill="no"-->
+    <!--        android:inputType="textPassword"-->
+    <!--        android:paddingHorizontal="10dp"-->
+    <!--        android:text="123456"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/edtEmail" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/tvForgotPassword"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:text="@string/forgot_password_label"-->
+    <!--        android:textColor="#0071FF"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/edtPassword"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/edtPassword" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/btnLogin"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:background="@drawable/bg_button_login"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="@string/login_label"-->
+    <!--        android:textAllCaps="true"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />-->
+
+    <!--    <androidx.appcompat.widget.AppCompatTextView-->
+    <!--        android:id="@+id/tvRegister"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:text="@string/suggestion_register_label"-->
+    <!--        android:textColor="#0071FF"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/edtPassword"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/btnLogin" />-->
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/layoutLoading"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:background="#19000000"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.cardview.widget.CardView-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            app:cardBackgroundColor="@color/white"-->
+    <!--            app:cardCornerRadius="10dp"-->
+    <!--            app:cardElevation="10dp">-->
+
+    <!--            <ProgressBar-->
+    <!--                android:layout_width="40dp"-->
+    <!--                android:layout_height="40dp"-->
+    <!--                android:layout_gravity="center" />-->
+    <!--        </androidx.cardview.widget.CardView>-->
+    <!--    </FrameLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

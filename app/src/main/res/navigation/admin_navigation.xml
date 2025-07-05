@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/nav_admin_dashboard">
+
+    <fragment
+        android:id="@+id/nav_admin_post"
+        android:name="edu.mb.oldzy.ui.admin.login.AdminLoginFragment"
+        android:label="AdminLogin"
+        tools:layout="@layout/fragment_admin_login" />
+
+    <fragment
+        android:id="@+id/nav_admin_dashboard"
+        android:name="edu.mb.oldzy.ui.admin.dashboard.AdminDashboardFragment"
+        android:label="AdminDashboard"
+        tools:layout="@layout/fragment_admin_dashboard">
+        <action
+            android:id="@+id/action_nav_admin_dashboard_to_nav_admin_users"
+            app:destination="@id/nav_admin_users" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_admin_category"
+        android:name="edu.mb.oldzy.ui.admin.category.AdminCategoryFragment"
+        android:label="AdminCategory"
+        tools:layout="@layout/fragment_admin_category">
+        <action
+            android:id="@+id/action_nav_admin_category_to_nav_admin_input_category"
+            app:destination="@id/nav_admin_input_category" />
+        <action
+            android:id="@+id/action_nav_admin_category_to_nav_admin_sub_category"
+            app:destination="@id/nav_admin_sub_category" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_admin_users"
+        android:name="edu.mb.oldzy.ui.admin.users.AdminUsersFragment"
+        android:label="AdminUsers"
+        tools:layout="@layout/fragment_admin_users" />
+
+    <fragment
+        android:id="@+id/nav_admin_input_category"
+        android:name="edu.mb.oldzy.ui.admin.category.AdminInputCategoryFragment"
+        android:label="AdminInputCategory"
+        tools:layout="@layout/fragment_admin_input_category" />
+
+    <fragment
+        android:id="@+id/nav_admin_sub_category"
+        android:name="edu.mb.oldzy.ui.admin.category.AdminSubCategoryFragment"
+        android:label="AdminSubCategory"
+        tools:layout="@layout/fragment_admin_sub_category" />
+</navigation>
