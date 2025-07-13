@@ -5,4 +5,5 @@ public enum AdminTab {
     DASHBOARD,
     POST,
     USERS,
+    SLIDES,
 }

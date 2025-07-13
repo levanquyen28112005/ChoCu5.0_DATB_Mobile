@@ -2,6 +2,8 @@ package edu.mb.oldzy.domain.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 import edu.mb.oldzy.data.model.UserModel;
 
 public class UserResponse {

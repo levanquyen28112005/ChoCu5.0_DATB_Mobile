@@ -4,21 +4,31 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import javax.inject.Inject;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import dagger.hilt.android.lifecycle.HiltViewModel;
+import edu.mb.oldzy.data.model.SlideModel;
+import edu.mb.oldzy.domain.model.SlideResponse;
+import edu.mb.oldzy.domain.repository.SlideRepository;
 
 
 public class HomeViewModel extends ViewModel {
 
-//    private final MutableLiveData<String> mText;
-//
-//    public HomeViewModel() {
-//        mText = new MutableLiveData<>();
-//        mText.setValue("This is home fragment");
-//    }
+    private final SlideRepository slideRepository = new SlideRepository();
 
-//    public LiveData<String> getText() {
-//        return mText;
-//    }
+    private final MutableLiveData<List<SlideModel>> slidesResult = new MutableLiveData<>();
+
+    public LiveData<List<SlideModel>> getSlidesResult() {
+        return slidesResult;
+    }
+
+    public void loadSlides() {
+        slideRepository.getSlides().observeForever(responses -> {
+            List<SlideModel> slideModels = responses.stream()
+                    .map(SlideResponse::toSlideModel)
+                    .collect(Collectors.toList());
+
+            slidesResult.postValue(slideModels);
+        });
+    }
 }

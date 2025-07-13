@@ -1,8 +1,8 @@
 package edu.mb.oldzy.data.model;
 
-import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-public class UserModel {
+public class UserModel implements Serializable {
 
     private String username;
     private String email;

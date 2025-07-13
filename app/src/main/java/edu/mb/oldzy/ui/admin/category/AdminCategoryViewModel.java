@@ -14,12 +14,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import edu.mb.oldzy.data.model.CategoryModel;
-import edu.mb.oldzy.data.model.UserModel;
 import edu.mb.oldzy.domain.model.CategoryResponse;
-import edu.mb.oldzy.domain.model.UserResponse;
 import edu.mb.oldzy.domain.repository.CategoryRepository;
 import edu.mb.oldzy.domain.repository.FileUploadRepository;
-import edu.mb.oldzy.domain.repository.UserRepository;
 
 public class AdminCategoryViewModel extends ViewModel {
 
