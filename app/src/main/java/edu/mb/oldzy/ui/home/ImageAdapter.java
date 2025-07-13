@@ -8,14 +8,17 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import edu.mb.oldzy.R;
+import edu.mb.oldzy.domain.ApiClient;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
-    private final List<Integer> imageList;
+    private final List<String> imageList;
 
-    public ImageAdapter(List<Integer> imageList) {
+    public ImageAdapter(List<String> imageList) {
         this.imageList = imageList;
     }
 
@@ -37,7 +40,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-        holder.imageView.setImageResource(imageList.get(position));
+        Glide.with(holder.imageView.getRootView())
+                .load(ApiClient.BASE_URL.substring(0, ApiClient.BASE_URL.length() - 1) + imageList.get(position))
+                .into(holder.imageView);
     }
 
     @Override

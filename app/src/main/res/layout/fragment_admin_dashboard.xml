@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,11 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Admin"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+        tools:text="Admin" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewCategory"
@@ -220,6 +221,56 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="+3 trong 7 ngày qua"
+                android:textColor="#E9E9E9"
+                android:textSize="11sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSlide"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#E859E1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewReview"
+        app:layout_constraintWidth_percent="0.8">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingVertical="5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="8dp"
+                android:text="Quản lý Slide quảng cáo"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSlideCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/montserrat_extra_bold"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLatestCreatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Cập nhật gần nhất: 19:23 10/09/2025"
                 android:textColor="#E9E9E9"
                 android:textSize="11sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>

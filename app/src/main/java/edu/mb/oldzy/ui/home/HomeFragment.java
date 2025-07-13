@@ -6,19 +6,16 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import dagger.hilt.android.AndroidEntryPoint;
-import dagger.hilt.android.HiltAndroidApp;
-import edu.mb.oldzy.R;
+import edu.mb.oldzy.data.model.SlideModel;
 import edu.mb.oldzy.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -27,7 +24,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel viewModel;
 
     private ImageAdapter adapter;
-    private List<Integer> imageList;
+    private List<String> imageList;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private int currentPosition = 0;
     private final long DELAY_MS = 3000; // 3s
@@ -49,6 +46,22 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
+        viewModel.getSlidesResult().observe(getViewLifecycleOwner(), response -> {
+            if (response.isEmpty()) {
+                binding.viewPager2.setVisibility(View.GONE);
+            } else {
+                binding.viewPager2.setVisibility(View.VISIBLE);
+                imageList = response.stream()
+                        .map(SlideModel::getImage)
+                        .collect(Collectors.toList());
+                adapter = new ImageAdapter(imageList);
+                binding.viewPager2.setAdapter(adapter);
+
+                // Auto-scroll
+                handler.postDelayed(runnable, DELAY_MS);
+            }
+        });
+
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -56,19 +69,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        imageList = Arrays.asList(
-                R.drawable.banner_01,
-                R.drawable.banner_02,
-                R.drawable.banner_03,
-                R.drawable.banner_04
-        );
-
-        adapter = new ImageAdapter(imageList);
-        binding.viewPager2.setAdapter(adapter);
-
-        // Auto-scroll
-        handler.postDelayed(runnable, DELAY_MS);
+        viewModel.loadSlides();
     }
 
     @Override

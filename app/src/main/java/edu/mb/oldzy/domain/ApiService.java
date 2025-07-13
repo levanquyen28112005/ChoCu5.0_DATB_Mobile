@@ -5,11 +5,14 @@ import java.util.List;
 import edu.mb.oldzy.domain.model.BaseResponse;
 import edu.mb.oldzy.domain.model.CategoryResponse;
 import edu.mb.oldzy.domain.model.FileUploadResponse;
+import edu.mb.oldzy.domain.model.SlideResponse;
+import edu.mb.oldzy.domain.model.SlideStatsResponse;
 import edu.mb.oldzy.domain.model.TokenResponse;
 import edu.mb.oldzy.domain.model.UserResponse;
 import edu.mb.oldzy.domain.request.CategoryRequest;
 import edu.mb.oldzy.domain.request.LoginRequest;
 import edu.mb.oldzy.domain.request.RegisterRequest;
+import edu.mb.oldzy.domain.request.SlideRequest;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -51,4 +54,16 @@ public interface ApiService {
     @Multipart
     @POST("files/upload")
     Call<FileUploadResponse> uploadImage(@Header("Authorization") String token, @Part MultipartBody.Part file);
+
+    @GET("slide/all")
+    Call<BaseResponse<List<SlideResponse>>> getSlides();
+
+    @GET("slide/stats")
+    Call<BaseResponse<SlideStatsResponse>> getSlideStats();
+
+    @POST("slide/add")
+    Call<BaseResponse<String>> addSlide(@Header("Authorization") String token, @Body SlideRequest request);
+
+    @DELETE("slide/delete/{id}")
+    Call<BaseResponse<String>> deleteSlide(@Header("Authorization") String token, @Path("id") int id);
 }

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_admin_dashboard_to_nav_admin_users"
             app:destination="@id/nav_admin_users" />
+        <action
+            android:id="@+id/action_nav_admin_dashboard_to_nav_admin_slides"
+            app:destination="@id/nav_admin_slides" />
     </fragment>
 
     <fragment
@@ -51,4 +54,20 @@
         android:name="edu.mb.oldzy.ui.admin.category.AdminSubCategoryFragment"
         android:label="AdminSubCategory"
         tools:layout="@layout/fragment_admin_sub_category" />
+
+    <fragment
+        android:id="@+id/nav_admin_slides"
+        android:name="edu.mb.oldzy.ui.admin.slides.AdminSlidesFragment"
+        android:label="AdminSlides"
+        tools:layout="@layout/fragment_admin_slides" >
+        <action
+            android:id="@+id/action_nav_admin_slides_to_nav_admin_create_slide"
+            app:destination="@id/nav_admin_create_slide" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_admin_create_slide"
+        android:name="edu.mb.oldzy.ui.admin.slides.AdminCreateSlideFragment"
+        android:label="AdminCreateSlide"
+        tools:layout="@layout/fragment_admin_create_slide" />
 </navigation>
