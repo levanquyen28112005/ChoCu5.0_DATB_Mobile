@@ -4,5 +4,8 @@
         <attr name="title" format="string" />
         <attr name="subTitle" format="string" />
         <attr name="isInput" format="boolean" />
+        <attr name="isDigitOnly" format="boolean" />
+        <attr name="isRequired" format="boolean" />
+        <attr name="isReadOnly" format="boolean" />
     </declare-styleable>
 </resources>

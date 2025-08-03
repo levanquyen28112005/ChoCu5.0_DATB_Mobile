@@ -40,7 +40,7 @@ public class AdminCategoryFragment extends Fragment implements AdminCategoryAdap
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setClipToPadding(false);
-        binding.recyclerView.setPadding(0, 0, 0, 100);
+        binding.recyclerView.setPadding(0, 0, 0, 200);
 
         // register observer
         viewModel.getCategoriesResult().observe(getViewLifecycleOwner(), response -> {

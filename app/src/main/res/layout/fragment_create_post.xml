@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -39,186 +40,293 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/header" />
 
-    <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
-    <!--        android:id="@+id/layoutCategory"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginHorizontal="20dp"-->
-    <!--        android:layout_marginTop="20dp"-->
-    <!--        android:background="@drawable/bg_input_login"-->
-    <!--        android:orientation="vertical"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/header">-->
-
-    <!--        <androidx.appcompat.widget.AppCompatTextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginHorizontal="10dp"-->
-    <!--            android:layout_marginTop="5dp"-->
-    <!--            android:fontFamily="@font/montserrat_regular"-->
-    <!--            android:text="Danh mục *"-->
-    <!--            android:textColor="#3E3E3E"-->
-    <!--            android:textSize="11sp"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toBottomOf="@id/header" />-->
-
-    <!--        <androidx.appcompat.widget.AppCompatTextView-->
-    <!--            android:id="@+id/tvCategory"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginHorizontal="10dp"-->
-    <!--            android:fontFamily="@font/montserrat_bold"-->
-    <!--            android:paddingVertical="5dp"-->
-    <!--            android:text="Đồ điện tử - Điện thoại"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:textSize="11sp"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toBottomOf="@id/header" />-->
-
-    <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
-
-    <!--    <androidx.appcompat.widget.AppCompatImageView-->
-    <!--        android:layout_width="20dp"-->
-    <!--        android:layout_height="20dp"-->
-    <!--        android:layout_marginEnd="5dp"-->
-    <!--        android:padding="5dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@id/layoutCategory"-->
-    <!--        app:layout_constraintEnd_toEndOf="@id/layoutCategory"-->
-    <!--        app:layout_constraintTop_toTopOf="@id/layoutCategory"-->
-    <!--        app:srcCompat="@drawable/ic_drop_down"-->
-    <!--        app:tint="#4D4D4D" />-->
-
-    <edu.mb.oldzy.ui.widget.CustomOptionPostView
-        android:id="@+id/opvCategory"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:subTitle="Điện tử - Điện lạnh"
-        app:title="Danh mục *" />
+        app:layout_constraintTop_toBottomOf="@id/header">
 
-    <edu.mb.oldzy.ui.widget.CustomOptionPostView
-        android:id="@+id/opvCondition"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:subTitle="Nhấn vào để chọn"
+                app:title="Danh mục" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvCondition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvCategory"
+                app:subTitle="Hàng mới"
+                app:title="Tình trạng" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvBrand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:isInput="true"
+                app:isRequired="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvCondition"
+                app:subTitle="Nhập tên Thương hiệu"
+                app:title="Thương hiệu" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvColor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvBrand"
+                app:subTitle="Nhập màu sắc"
+                app:title="Màu sắc" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvMaterial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvColor"
+                app:subTitle="Nhập thông tin"
+                app:title="Chất liệu" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvOther"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvColor"
+                app:subTitle="Nhập thêm"
+                app:title="Thông tin khác" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isDigitOnly="true"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvMaterial"
+                app:subTitle="Nhập giá"
+                app:title="Giá bán" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeaderPost"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#EBEBEB"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="10dp"
+                android:text="Tiêu đề tin đăng và mô tả"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvPrice" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeaderPost"
+                app:subTitle="Nhập thông tin"
+                app:title="Tiêu đề tin đăng" />
+
+            <EditText
+                android:id="@+id/edtDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_input_login"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:hint="Mô tả chi tiết *"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:minHeight="100dp"
+                android:padding="10dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeaderImage"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#EBEBEB"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="10dp"
+                android:text="Hình ảnh chi tiết"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtDescription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeaderImage"
+                android:orientation="horizontal"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_image_post" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeaderAddress"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#EBEBEB"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="10dp"
+                android:text="Thông tin người bán"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvSellerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isReadOnly="true"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeaderAddress"
+                app:subTitle="Nhập tên"
+                app:title="Bạn là" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvSellerPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvSellerName"
+                app:subTitle="09xxxxxxxx"
+                app:title="Số điện thoại" />
+
+            <edu.mb.oldzy.ui.widget.CustomOptionPostView
+                android:id="@+id/opvSellerAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:isInput="true"
+                app:isRequired="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvSellerPhone"
+                app:subTitle="Nhập địa chỉ người mua có thể xem hàng"
+                app:title="Địa chỉ" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnPost"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_button_login"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="đăng tin"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opvSellerAddress" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1A000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opvCategory"
-        app:subTitle="Hàng mới"
-        app:title="Tình trạng *" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <edu.mb.oldzy.ui.widget.CustomOptionPostView
-        android:id="@+id/opvBrand"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:isInput="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/opvCondition"
-        app:subTitle="Nhập tên Thương hiệu"
-        app:title="Thương hiệu" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
 
-    <!--    <EditText-->
-    <!--        android:id="@+id/edtEmail"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_marginHorizontal="20dp"-->
-    <!--        android:layout_marginTop="20dp"-->
-    <!--        android:background="@drawable/bg_input_login"-->
-    <!--        android:hint="@string/email_label"-->
-    <!--        android:importantForAutofill="no"-->
-    <!--        android:inputType="textEmailAddress"-->
-    <!--        android:paddingHorizontal="10dp"-->
-    <!--        android:text="admin@oldzy.com"-->
-    <!--        android:textColor="@color/black"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tvTitle" />-->
-
-    <!--    <EditText-->
-    <!--        android:id="@+id/edtPassword"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_marginHorizontal="20dp"-->
-    <!--        android:layout_marginTop="15dp"-->
-    <!--        android:background="@drawable/bg_input_login"-->
-    <!--        android:hint="@string/password_label"-->
-    <!--        android:importantForAutofill="no"-->
-    <!--        android:inputType="textPassword"-->
-    <!--        android:paddingHorizontal="10dp"-->
-    <!--        android:text="123456"-->
-    <!--        android:textColor="@color/black"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/edtEmail" />-->
-
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/tvForgotPassword"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="15dp"-->
-    <!--        android:text="@string/forgot_password_label"-->
-    <!--        android:textColor="#0071FF"-->
-    <!--        app:layout_constraintStart_toStartOf="@id/edtPassword"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/edtPassword" />-->
-
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/btnLogin"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:layout_marginHorizontal="20dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:background="@drawable/bg_button_login"-->
-    <!--        android:gravity="center"-->
-    <!--        android:text="@string/login_label"-->
-    <!--        android:textAllCaps="true"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        android:textSize="18sp"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />-->
-
-    <!--    <androidx.appcompat.widget.AppCompatTextView-->
-    <!--        android:id="@+id/tvRegister"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:padding="15dp"-->
-    <!--        android:text="@string/suggestion_register_label"-->
-    <!--        android:textColor="#0071FF"-->
-    <!--        android:textStyle="bold"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="@id/edtPassword"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/btnLogin" />-->
-
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/layoutLoading"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:background="#19000000"-->
-    <!--        android:visibility="gone"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:layout_width="80dp"-->
-    <!--            android:layout_height="80dp"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            app:cardBackgroundColor="@color/white"-->
-    <!--            app:cardCornerRadius="10dp"-->
-    <!--            app:cardElevation="10dp">-->
-
-    <!--            <ProgressBar-->
-    <!--                android:layout_width="40dp"-->
-    <!--                android:layout_height="40dp"-->
-    <!--                android:layout_gravity="center" />-->
-    <!--        </androidx.cardview.widget.CardView>-->
-    <!--    </FrameLayout>-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/lotie_loading" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

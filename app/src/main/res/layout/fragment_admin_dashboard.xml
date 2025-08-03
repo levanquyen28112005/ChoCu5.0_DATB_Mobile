@@ -31,6 +31,28 @@
         tools:text="Admin" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="#FF0000"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvAdmin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAdmin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:padding="5dp"
+            android:text="Đăng xuất"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardViewCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -59,13 +81,14 @@
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCountCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/montserrat_extra_bold"
-                android:text="30"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="30" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvCategoryNewLast7days"
@@ -260,9 +283,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/montserrat_extra_bold"
-                android:text="4"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="4" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvLatestCreatedAt"

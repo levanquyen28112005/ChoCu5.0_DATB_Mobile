@@ -18,11 +18,12 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvSearch"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="38dp"
         android:layout_margin="10dp"
         android:background="@drawable/bg_search"
         android:gravity="center"
         android:text="Tìm kiếm trên Oldzy"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +32,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@id/tvSearch"
         app:layout_constraintStart_toStartOf="@id/tvSearch"
         app:layout_constraintTop_toTopOf="@id/tvSearch"
@@ -50,19 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="220dp"
-                android:background="@color/colorMain"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager2"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="140dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +74,8 @@
                 android:id="@+id/tvCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="14dp"
                 android:text="Khám phá danh mục"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -89,15 +83,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/viewPager2" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivDemoCategory"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCategory"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
-                android:scaleType="centerCrop"
+                android:layout_height="250dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvCategory"
-                app:srcCompat="@drawable/demo_danhmuc" />
+                app:spanCount="2"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_category" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvHot"
@@ -109,7 +107,20 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivDemoCategory" />
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewCategory" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewHot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHot"
+                app:spanCount="2"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_product_hot" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

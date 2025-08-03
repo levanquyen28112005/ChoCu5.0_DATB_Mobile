@@ -8,12 +8,21 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/baseline_account_tree_24"
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_post"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/baseline_notifications_none_24"
+        android:title="@string/title_notifications" />
+
+    <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/avatar_default_svgrepo_com"
+        android:icon="@drawable/baseline_more_horiz_24"
         android:title="@string/title_profile" />
 
 </menu>

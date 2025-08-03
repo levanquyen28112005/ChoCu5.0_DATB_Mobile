@@ -17,6 +17,24 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ivCreatePost"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="70dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="3dp"
+            app:srcCompat="@drawable/icon_create_post" />
+    </androidx.cardview.widget.CardView>
+
     <fragment
         android:id="@+id/nav_host_fragment_activity_main"
         android:name="androidx.navigation.fragment.NavHostFragment"

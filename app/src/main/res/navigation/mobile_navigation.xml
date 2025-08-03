@@ -9,7 +9,7 @@
         android:id="@+id/navigation_splash"
         android:name="edu.mb.oldzy.ui.splash.SplashFragment"
         android:label="Splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_navigation_splash_to_navigation_home"
             app:destination="@id/navigation_home" />
@@ -57,4 +57,21 @@
         android:name="edu.mb.oldzy.ui.register.RegisterFragment"
         android:label="Register"
         tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/navigation_create_post"
+        android:name="edu.mb.oldzy.ui.post.create_post.CreatePostFragment"
+        android:label="Create Post"
+        tools:layout="@layout/fragment_create_post">
+        <deepLink app:uri="oldzy://create_post" />
+        <action
+            android:id="@+id/action_navigation_create_post_to_navigation_created_post"
+            app:destination="@id/navigation_created_post" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_created_post"
+        android:name="edu.mb.oldzy.ui.post.create_post.CreatedPostFragment"
+        android:label="Created Post"
+        tools:layout="@layout/fragment_created_post" />
 </navigation>

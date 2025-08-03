@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Oldzy</string>
     <string name="title_home">Trang chủ</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Quản lý tin</string>
+    <string name="title_notifications">Thông báo</string>
     <string name="title_profile">Tài khoản</string>
     <string name="email_label">Email</string>
     <string name="login_label">Đăng nhập</string>

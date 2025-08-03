@@ -36,12 +36,12 @@ public class RegisterFragment extends Fragment {
         viewModel.getRegisterResult().observe(getViewLifecycleOwner(), response -> {
             binding.layoutLoading.setVisibility(View.GONE);
             if (response != null && !TextUtils.isEmpty(response.getToken())) {
-                // Toast.makeText(requireContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                 InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 findNavController(binding.getRoot()).popBackStack();
             } else {
-                Toast.makeText(requireContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Đăng ký thất bại! Vui lòng thử lại", Toast.LENGTH_SHORT).show();
             }
         });
 

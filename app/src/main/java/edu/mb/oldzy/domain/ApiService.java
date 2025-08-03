@@ -5,12 +5,14 @@ import java.util.List;
 import edu.mb.oldzy.domain.model.BaseResponse;
 import edu.mb.oldzy.domain.model.CategoryResponse;
 import edu.mb.oldzy.domain.model.FileUploadResponse;
+import edu.mb.oldzy.domain.model.PostResponse;
 import edu.mb.oldzy.domain.model.SlideResponse;
 import edu.mb.oldzy.domain.model.SlideStatsResponse;
 import edu.mb.oldzy.domain.model.TokenResponse;
 import edu.mb.oldzy.domain.model.UserResponse;
 import edu.mb.oldzy.domain.request.CategoryRequest;
 import edu.mb.oldzy.domain.request.LoginRequest;
+import edu.mb.oldzy.domain.request.PostRequest;
 import edu.mb.oldzy.domain.request.RegisterRequest;
 import edu.mb.oldzy.domain.request.SlideRequest;
 import okhttp3.MultipartBody;
@@ -66,4 +68,19 @@ public interface ApiService {
 
     @DELETE("slide/delete/{id}")
     Call<BaseResponse<String>> deleteSlide(@Header("Authorization") String token, @Path("id") int id);
+
+    @POST("post/create")
+    Call<BaseResponse<String>> createPost(@Header("Authorization") String token, @Body PostRequest request);
+
+    @GET("post/pending")
+    Call<BaseResponse<List<PostResponse>>> getAllPendingPosts(@Header("Authorization") String token);
+
+    @GET("post/all")
+    Call<BaseResponse<List<PostResponse>>> getAll();
+
+    @GET("post/approved")
+    Call<BaseResponse<List<PostResponse>>> getAllApprovedPosts(@Header("Authorization") String token);
+
+    @GET("post/rejected")
+    Call<BaseResponse<List<PostResponse>>> getAllRejectedPosts(@Header("Authorization") String token);
 }

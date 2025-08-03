@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:srcCompat="@drawable/ic_back_white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="Quản lý bài đăng"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/header" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutPending"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text="Chưa duyệt"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/viewPending"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMain" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutApproved"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text="Đã duyệt"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/viewApproved"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMain"
+                android:visibility="invisible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutRejected"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text="Từ chối"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/viewRejected"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMain"
+                android:visibility="invisible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutAll"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:text="Tất cả"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/viewAll"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorMain"
+                android:visibility="invisible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmptyData"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="Chưa có bài đăng nào"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

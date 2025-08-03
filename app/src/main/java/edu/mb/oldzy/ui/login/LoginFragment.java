@@ -61,10 +61,12 @@ public class LoginFragment extends Fragment {
             if (userResponse != null) {
                 if ("admin".equals(userResponse.getRole())) {
                     Intent intent = new Intent(requireActivity(), AdminActivity.class);
+                    intent.putExtra("user", userResponse.toUserModel());
                     startActivity(intent);
                     requireActivity().finish();
                 } else {
                     Toast.makeText(requireContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                    findNavController(binding.getRoot()).popBackStack();
                 }
             } else {
                 binding.layoutLoading.setVisibility(View.GONE);

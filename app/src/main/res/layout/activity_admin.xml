@@ -76,18 +76,21 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCategory"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:padding="4dp"
                 app:srcCompat="@drawable/ic_category" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:includeFontPadding="false"
                 android:text="Danh mục"
-                android:textColor="@color/black" />
+                android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -99,18 +102,22 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDashboard"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:padding="4dp"
                 app:srcCompat="@drawable/ic_dashboard" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDashboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:includeFontPadding="false"
                 android:text="Tổng quan"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -122,18 +129,21 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPost"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:padding="4dp"
                 app:srcCompat="@drawable/ic_post" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/montserrat_regular"
                 android:includeFontPadding="false"
                 android:text="Bài đăng"
-                android:textColor="@color/black" />
+                android:textSize="12sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 

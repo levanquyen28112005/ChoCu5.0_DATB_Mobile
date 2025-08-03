@@ -48,6 +48,10 @@ public class AdminSlidesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.tvCategory.setOnClickListener(v-> {
+            NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_admin);
+            navController.popBackStack();
+        });
         binding.layoutLoading.setVisibility(View.VISIBLE);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new SlideAdapter(viewModel.getSlidesResult().getValue(), slideModel -> {

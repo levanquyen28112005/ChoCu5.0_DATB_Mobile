@@ -12,11 +12,12 @@
         android:layout_margin="20dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="50dp"
-        app:cardElevation="10dp"
+        app:cardElevation="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAvatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
@@ -27,11 +28,384 @@
         android:id="@+id/tvLoginOrRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/montserrat_bold"
         android:text="Đăng nhập/Đăng ký"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/cardView"
         app:layout_constraintStart_toEndOf="@id/cardView"
         app:layout_constraintTop_toTopOf="@id/cardView" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="@id/cardView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="---"
+            android:textColor="@color/black" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#99E7E7E7"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="6dp"
+                    android:padding="2dp"
+                    app:srcCompat="@drawable/ic_information"
+                    app:tint="#8F8F8F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:includeFontPadding="false"
+                    android:text="Mã định danh:"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="---"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvManager"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE"
+        android:fontFamily="@font/montserrat_medium"
+        android:padding="10dp"
+        android:text="Quản lý đơn hàng"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPurchaseOrder"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#0860EC"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvManager">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_shopping_cart"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Đơn mua"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewPurchaseOrder"
+        app:layout_constraintStart_toEndOf="@id/cardViewPurchaseOrder"
+        app:layout_constraintTop_toTopOf="@id/cardViewPurchaseOrder" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#B3C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewPurchaseOrder" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSalesOrder"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#349604"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewPurchaseOrder">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_shopping_cart"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Đơn bán"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewSalesOrder"
+        app:layout_constraintStart_toEndOf="@id/cardViewSalesOrder"
+        app:layout_constraintTop_toTopOf="@id/cardViewSalesOrder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUtilities"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE"
+        android:fontFamily="@font/montserrat_medium"
+        android:padding="10dp"
+        android:text="Tiện ích"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSalesOrder" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSavedPosts"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#F4594E"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUtilities">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_favorite"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Tin đăng đã lưu"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewSavedPosts"
+        app:layout_constraintStart_toEndOf="@id/cardViewSavedPosts"
+        app:layout_constraintTop_toTopOf="@id/cardViewSavedPosts" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#B3C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSavedPosts" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSavedSearches"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#F48A10"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSavedPosts">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_bookmark"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Tìm kiếm đã lưu"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewSavedSearches"
+        app:layout_constraintStart_toEndOf="@id/cardViewSavedSearches"
+        app:layout_constraintTop_toTopOf="@id/cardViewSavedSearches" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#B3C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSavedSearches" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewMyReview"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#7710F4"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewSavedSearches">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_feedback"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Đánh giá từ tôi"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewMyReview"
+        app:layout_constraintStart_toEndOf="@id/cardViewMyReview"
+        app:layout_constraintTop_toTopOf="@id/cardViewMyReview" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOthers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE"
+        android:fontFamily="@font/montserrat_medium"
+        android:padding="10dp"
+        android:text="Khác"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewMyReview" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewMyAccount"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#AAAAAA"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOthers">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_gears"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Cài đặt tài khoản"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewMyAccount"
+        app:layout_constraintStart_toEndOf="@id/cardViewMyAccount"
+        app:layout_constraintTop_toTopOf="@id/cardViewMyAccount" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#B3C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewMyAccount" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewLogout"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="#AAAAAA"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewMyAccount">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_logout"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Đăng xuất"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewLogout"
+        app:layout_constraintStart_toEndOf="@id/cardViewLogout"
+        app:layout_constraintTop_toTopOf="@id/cardViewLogout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Oldzy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/colorMain</item>
+        <item name="colorPrimaryVariant">@color/colorMain</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/black</item>
@@ -12,7 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/colorMain</item>
         <!-- Customize your theme here. -->
-<!--        <item name="fontFamily">@font/montserrat_regular</item>-->
-<!--        <item name="android:fontFamily">@font/montserrat_regular</item>-->
+        <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 </resources>

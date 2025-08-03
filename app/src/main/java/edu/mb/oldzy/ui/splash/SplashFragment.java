@@ -21,6 +21,7 @@ import androidx.navigation.NavOptions;
 
 import edu.mb.oldzy.R;
 import edu.mb.oldzy.databinding.FragmentSplashBinding;
+import edu.mb.oldzy.ui.MainActivity;
 import edu.mb.oldzy.ui.admin.AdminActivity;
 
 public class SplashFragment extends Fragment {
@@ -45,6 +46,7 @@ public class SplashFragment extends Fragment {
                     startActivity(intent);
                     requireActivity().finish();
                 } else {
+                    ((MainActivity) requireActivity()).user = userResponse;
                     findNavController(binding.getRoot()).navigate(R.id.action_navigation_splash_to_navigation_home, null, navOptions);
                 }
             } else {
